@@ -2,13 +2,27 @@
 
 
 
-## Table of Content
----
 
-## Clone
+## Installation
 
 Make sure to clone the repository with the submodules by using:
 `git clone --recursive git@github.com:Zhanpeng1202/Instant4D-Dev.git`
+
+### Environment
+
+The hardware and software requirements are the same as those of the [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), which this code is built upon. To setup the environment, please run the following command:
+
+```shell
+conda env create --file environment.yml
+conda activate instant4D
+
+cd SLAM/mega-samn/base
+python setup.py install
+cd ../../../../
+```
+
+
+
 
 ### 4DGS Remote Viewer
 ---
@@ -44,27 +58,62 @@ git clone git@github.com:graphdeco-inria/gaussian-splatting.git --recursive
 # replace train.py with that provided in this repository
 ```
 
-### Get Started 
+
+
+
+
+### Datasets
 ---
-
-### Environment
-
-The hardware and software requirements are the same as those of the [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), which this code is built upon. To setup the environment, please run the following command:
-
-```shell
-git clone https://github.com/fudan-zvg/4d-gaussian-splatting
-cd 4d-gaussian-splatting
-conda env create --file environment.yml
-conda activate 4dgs
 ```
+mkdir dataset
+cd dataset
+```
+
+### [Nvidia](https://gorokee.github.io/jsyoon/dynamic_synth/)
+Download the pre-processed data by [DynamicNeRF](https://github.com/gaochen315/DynamicNeRF).
+```
+mkdir Nvidia
+wget --no-check-certificate https://filebox.ece.vt.edu/~chengao/free-view-video/data.zip
+unzip data.zip
+rm data.zip
+```
+
+### [DAVIS](https://davischallenge.org/davis2016/code.html) or custom sequences
+Put the images in the following data structure.
+```
+RoDynRF                
+├── dataset
+│   ├── DAVIS_480p
+│   │   ├── bear
+│   │   │   └── images
+│   │   │       ├── 00000.jpg
+│   │   │       ├── 00001.jpg
+│   │   │       ├── ...
+│   │   │       └── 00081.jpg
+│   │   ├── blackswan
+│   │   ├── ...
+│   │   └── train
+│   ├── custom
+│   │   ├── sequence_000
+│   │   │   └── images
+│   │   │       ├── 00000.jpg
+│   │   │       ├── 00001.jpg
+│   │   │       ├── ...
+```
+Run the following preprocessing steps.
 
 
 ### Reproduce
 ---
-We provide the GPU 
+We provide the input file after grid prunning to facilitate reproduce, the processed data can be find here 
+[data](https://drive.google.com/drive/u/1/folders/1Ce4C0WpabtTQvZXeiUmMKVhD5kA9wJPf)
 
 
-
+### Optimize 
+Change the `source_path` and `model_path` accordingly in the config files, then run 
+```
+python batch_train.py
+```
 
 
 
