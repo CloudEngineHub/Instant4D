@@ -28,8 +28,6 @@ cd ../../../../
 
 ### 4DGS Remote Viewer
 
----
-
 We provide a lightweight websocket remote viewer to visualize 4DGS training process. Users can train 4DGS on a server and hope to view it on local computer.
 
 On the local computer
@@ -67,8 +65,6 @@ git clone git@github.com:graphdeco-inria/gaussian-splatting.git --recursive
 
 
 ### Dataset
-
----
 
 ```
 mkdir dataset
@@ -113,8 +109,6 @@ Run the following preprocessing steps.
 
 ## Reproduction
 
----
-
 We provide the input file after grid prunning to facilitate reproduce, the processed data can be find here 
 [data](https://drive.google.com/drive/u/1/folders/1Ce4C0WpabtTQvZXeiUmMKVhD5kA9wJPf)
 
@@ -129,8 +123,6 @@ python batch_train.py
 
 ## Acknowledgement
 
----
-
 This work is built on many amazing research works and open-source projects, thanks a lot to all the authors for sharing!
 
 - [Gaussian-Splatting](https://github.com/graphdeco-inria/gaussian-splatting) and [diff-gaussian-rasterization](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
@@ -139,7 +131,6 @@ This work is built on many amazing research works and open-source projects, than
 
 ## Citation
 
----
 If you find this project useful in your research, please consider citing:
 ```
 @article{luo2025instant4d,
