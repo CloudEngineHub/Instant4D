@@ -1,5 +1,7 @@
 # Instant4D: 4D Gaussian Splatting in Minutes
 
+<a href="https://instant4d.github.io/"><img src='https://img.shields.io/badge/Website-Instant4D-green' alt='Website'></a>
+<a href="#citation"><img src='https://img.shields.io/badge/BibTex-Instant4D-blue' alt='Paper BibTex'></a>
 
 
 
@@ -25,7 +27,9 @@ cd ../../../../
 
 
 ### 4DGS Remote Viewer
+
 ---
+
 We provide a lightweight websocket remote viewer to visualize 4DGS training process. Users can train 4DGS on a server and hope to view it on local computer.
 
 On the local computer
@@ -62,14 +66,17 @@ git clone git@github.com:graphdeco-inria/gaussian-splatting.git --recursive
 
 
 
-### Datasets
+### Dataset
+
 ---
+
 ```
 mkdir dataset
 cd dataset
 ```
 
 ### [Nvidia](https://gorokee.github.io/jsyoon/dynamic_synth/)
+
 Download the pre-processed data by [DynamicNeRF](https://github.com/gaochen315/DynamicNeRF).
 ```
 mkdir Nvidia
@@ -79,6 +86,7 @@ rm data.zip
 ```
 
 ### [DAVIS](https://davischallenge.org/davis2016/code.html) or custom sequences
+
 Put the images in the following data structure.
 ```
 RoDynRF                
@@ -103,27 +111,24 @@ RoDynRF
 Run the following preprocessing steps.
 
 
-### Reproduce
+## Reproduction
+
 ---
+
 We provide the input file after grid prunning to facilitate reproduce, the processed data can be find here 
 [data](https://drive.google.com/drive/u/1/folders/1Ce4C0WpabtTQvZXeiUmMKVhD5kA9wJPf)
 
 
-### Optimize 
+### Optimization
+
 Change the `source_path` and `model_path` accordingly in the config files, then run 
 ```
 python batch_train.py
 ```
 
 
+## Acknowledgement
 
-
-
-
-
-
-
-### Acknowledgement
 ---
 
 This work is built on many amazing research works and open-source projects, thanks a lot to all the authors for sharing!
@@ -131,3 +136,16 @@ This work is built on many amazing research works and open-source projects, than
 - [Gaussian-Splatting](https://github.com/graphdeco-inria/gaussian-splatting) and [diff-gaussian-rasterization](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
 - [4d-gaussian-splatting](https://github.com/fudan-zvg/4d-gaussian-splatting)
 - [Mega-SAM](https://github.com/mega-sam/mega-sam)
+
+## Citation
+
+---
+If you find this project useful in your research, please consider citing:
+```
+@article{luo2025instant4d,
+  title={Instant4d: 4d gaussian splatting in minutes},
+  author={Luo, Zhanpeng and Ran, Haoxi and Lu, Li},
+  journal={Advances in neural information processing systems},
+  year={2025}
+}
+```
