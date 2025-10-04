@@ -13,17 +13,38 @@ Make sure to clone the repository with the submodules by using:
 
 ### Environment
 
-The hardware and software requirements are the same as those of the [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), which this code is built upon. To setup the environment, please run the following command:
+Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu122 and cu12 with your CUDA version.
+```shell
+conda env create instant4d python=3.10
+conda activate instantt4d
+pip install -r requirement.txt
+```
+
+
+To install mega-sam, run the following command:
 
 ```shell
-conda env create --file environment.yml
-conda activate instant4D
-
 cd SLAM/mega-samn/base
 python setup.py install
 cd ../../../../
 ```
 
+To install 4DGS and accelerate package, run the following command: 
+
+
+```shell
+cd submodule
+pip install fussed-ssim
+pip install simple-knn
+cd ..
+```
+
+### Downloading pretrained checkpoints
+
+1.  Download [DepthAnything checkpoint](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints/depth_anything_vitl14.pth) to
+    mega-sam/Depth-Anything/checkpoints/depth_anything_vitl14.pth
+
+2.  Download and include [RAFT checkpoint](https://drive.google.com/drive/folders/1sWDsfuZ3Up38EUQt7-JDTT1HcGHuJgvT) at mega-sam/cvd_opt/raft-things.pth
 
 
 
@@ -118,7 +139,7 @@ We provide the input file after grid prunning to facilitate reproduce, the proce
 
 Change the `source_path` and `model_path` accordingly in the config files, then run 
 ```
-python batch_train.py
+python train.py
 ```
 
 
