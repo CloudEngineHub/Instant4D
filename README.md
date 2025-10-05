@@ -29,7 +29,7 @@ python setup.py install
 cd ../../../../
 ```
 
-To install 4DGS and accelerate package, run the following command: 
+To install Gaussian Splatting accelerating package, run the following command: 
 
 
 ```shell
@@ -38,7 +38,7 @@ pip install fussed-ssim
 pip install simple-knn
 cd ..
 ```
-
+Noted that the gaussian splatting package will be compile during the first running.
 ### Downloading pretrained checkpoints
 
 1.  Download [DepthAnything checkpoint](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints/depth_anything_vitl14.pth) to
