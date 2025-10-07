@@ -1,7 +1,7 @@
 # Instant4D: 4D Gaussian Splatting in Minutes
 
 <a href="https://instant4d.github.io/"><img src='https://img.shields.io/badge/Website-Instant4D-green' alt='Website'></a>
-<a href="https://instant4d.github.io/static/Instant4D__Efficient_4D_Reconstruction_Casual_Video.pdf"><img src='https://img.shields.io/badge/PDF-Instant4D-yellow' alt='PDF'></a>
+<a href="https://arxiv.org/abs/2510.01119"><img src='https://img.shields.io/badge/PDF-Instant4D-yellow' alt='PDF'></a>
 <a href="#citation"><img src='https://img.shields.io/badge/BibTex-Instant4D-blue' alt='Paper BibTex'></a>
 
 
