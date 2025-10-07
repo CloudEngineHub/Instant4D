@@ -13,7 +13,7 @@ Make sure to clone the repository with the submodules by using:
 
 ### Environment
 
-Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu122 and cu12 with your CUDA version.
+Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu126 and cu12 with your CUDA version.
 ```shell
 conda env create instant4d python=3.10
 conda activate instantt4d
@@ -39,7 +39,7 @@ pip install simple-knn
 cd ..
 ```
 Noted that the gaussian splatting package will be compile during the first running.
-### Downloading pretrained checkpoints
+### Downloading pretrained checkpoints for mega-sam
 
 1.  Download [DepthAnything checkpoint](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints/depth_anything_vitl14.pth) to
     mega-sam/Depth-Anything/checkpoints/depth_anything_vitl14.pth
