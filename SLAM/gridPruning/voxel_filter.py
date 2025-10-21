@@ -371,8 +371,6 @@ def voxel_filter_colmap(droid_path, motion_path, save_dir, scene, use_mask=False
 
 
 
-
-
 if __name__ == "__main__":
     
     use_msam = False
