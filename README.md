@@ -1,7 +1,7 @@
 # Instant4D: 4D Gaussian Splatting in Minutes
 
 <a href="https://instant4d.github.io/"><img src='https://img.shields.io/badge/Website-Instant4D-green' alt='Website'></a>
-<a href="https://instant4d.github.io/static/Instant4D__Efficient_4D_Reconstruction_Casual_Video.pdf"><img src='https://img.shields.io/badge/PDF-Instant4D-yellow' alt='PDF'></a>
+<a href="https://arxiv.org/abs/2510.01119"><img src='https://img.shields.io/badge/PDF-Instant4D-yellow' alt='PDF'></a>
 <a href="#citation"><img src='https://img.shields.io/badge/BibTex-Instant4D-blue' alt='Paper BibTex'></a>
 
 
@@ -13,7 +13,7 @@ Make sure to clone the repository with the submodules by using:
 
 ### Environment
 
-Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu122 and cu12 with your CUDA version.
+Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu126 and cu12 with your CUDA version.
 ```shell
 conda env create instant4d python=3.10
 conda activate instantt4d
@@ -29,7 +29,7 @@ python setup.py install
 cd ../../../../
 ```
 
-To install 4DGS and accelerate package, run the following command: 
+To install Gaussian Splatting accelerating package, run the following command: 
 
 
 ```shell
@@ -38,8 +38,8 @@ pip install fussed-ssim
 pip install simple-knn
 cd ..
 ```
-
-### Downloading pretrained checkpoints
+Noted that the gaussian splatting package will be compile during the first running.
+### Downloading pretrained checkpoints for mega-sam
 
 1.  Download [DepthAnything checkpoint](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints/depth_anything_vitl14.pth) to
     mega-sam/Depth-Anything/checkpoints/depth_anything_vitl14.pth
