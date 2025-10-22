@@ -9,7 +9,7 @@
 ## Installation
 
 Make sure to clone the repository with the submodules by using:
-`git clone --recursive git@github.com:Zhanpeng1202/Instant4D-Dev.git`
+`git clone --recursive git@github.com:Zhanpeng1202/Instant4D.git`
 
 ### Environment
 
