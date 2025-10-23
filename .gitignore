@@ -1,6 +1,6 @@
 
 *.png
-*.txt
+
 *.DS_Store
 *.cam
 *.ply
