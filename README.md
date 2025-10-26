@@ -23,8 +23,8 @@ pip install -r requirement.txt
 ```
 
 
-To install mega-sam, run the following command:
-
+To install mega-sam, run the following command: <br>
+Note: change the `.type()` to `scalar_type()` in `mega-sam\base\src\altcorr_kernel` if using torch >2.7, refer this [issue](https://github.com/NVIDIAGameWorks/kaolin/issues/865).
 ```shell
 cd SLAM/mega-samn/base
 python setup.py install
@@ -32,7 +32,6 @@ cd ../../../../
 ```
 
 To install Gaussian Splatting accelerating package, run the following command: 
-
 
 ```shell
 cd submodule
