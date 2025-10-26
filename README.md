@@ -17,7 +17,7 @@ git clone --recursive git@github.com:Zhanpeng1202/Instant4D.git
 
 Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., replacing cu126 and cu12 with your CUDA version.
 ```shell
-conda env create instant4d python=3.10
+conda create -n instant4d python=3.10
 conda activate instantt4d
 pip install -r requirement.txt
 ```
