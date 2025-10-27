@@ -1,18 +1,15 @@
-torch
-torchvision
-colmap
 
+
+torch-scatter
+plyfile
 tqdm
 torchmetrics
 imagesize
-
-
 kornia
 omegaconf
-timm 
+timm
 ninja
 huggingface-hub
-torch-scatter
 opencv-python-headless
-
 point-cloud-utils
+websockets
