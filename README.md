@@ -21,6 +21,12 @@ conda create -n instant4d python=3.10
 conda activate instant4d
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126 # change to your CUDA version 
 pip install -r requirement.txt
+
+
+pip install xformers # read below
+# Note: mega-sam requires xformers for Unidepth, but there is a dependancy issue for newer pytroch
+# But Gaussian Splatting require CUDA version match.
+# therefore one workaround is to use a different virtual environment only for Unidepth metric depth estimaiton
 ```
 
 
@@ -43,6 +49,8 @@ python setup.py install
 cd ../..
 ```
 Noted that the gaussian splatting package will be compile during the first running.
+
+
 ### Downloading pretrained checkpoints for mega-sam
 
 1.  Download [DepthAnything checkpoint](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints/depth_anything_vitl14.pth) to
