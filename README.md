@@ -19,6 +19,7 @@ Update requirements.txt with correct CUDA version for PyTorch and cuUML, i.e., r
 ```shell
 conda create -n instant4d python=3.10
 conda activate instant4d
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126 # change to your CUDA version 
 pip install -r requirement.txt
 ```
 
