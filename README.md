@@ -38,7 +38,9 @@ To install Gaussian Splatting accelerating package, run the following command:
 cd submodule
 pip install fussed-ssim
 pip install simple-knn
-cd ..
+cd pointops2
+python setup.py install
+cd ../..
 ```
 Noted that the gaussian splatting package will be compile during the first running.
 ### Downloading pretrained checkpoints for mega-sam
@@ -141,7 +143,7 @@ We provide the input file after grid prunning to facilitate reproduce, the proce
 
 Change the `source_path` and `model_path` accordingly in the config files, then run 
 ```
-python train.py
+python -m script/optmize
 ```
 
 
