@@ -33,7 +33,7 @@ pip install xformers # read below
 To install mega-sam, run the following command: <br>
 Note: change the `.type()` to `scalar_type()` in `mega-sam\base\src\altcorr_kernel`, `mega-sam\base\src\correlation_kernels` and `mega-sam/base/thirdparty/lietorch/lietorch/src/lietorch_gpu.cu` if using torch >2.7, refer this [issue](https://github.com/NVIDIAGameWorks/kaolin/issues/865).
 ```shell
-cd SLAM/mega-samn/base
+cd SLAM/mega-sam/base
 python setup.py install
 cd ../../../../
 ```
