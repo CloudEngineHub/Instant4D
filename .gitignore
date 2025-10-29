@@ -37,5 +37,5 @@ dist/
 eggs/
 .eggs/
 *.egg
-*.sh
+
 fourth_party/DynamicNeRF
