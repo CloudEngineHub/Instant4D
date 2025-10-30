@@ -284,9 +284,9 @@ if __name__ == "__main__":
 
     scene_list = [ "pizza","einstein"]
 
-    droid_dir = "/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/outputs_cvd"
-    motion_dir_msam = "/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/reconstructions"
-    save_dir = "/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/voxel_filter/output/sora"
+    droid_dir = "Instant4D/SLAM/mega-sam/outputs_cvd"
+    motion_dir_msam = "Instant4D/SLAM/mega-sam/reconstructions"
+    save_dir = "Instant4D/SLAM/voxel_filter/output/sora"
     
     
     for scene in scene_list:
