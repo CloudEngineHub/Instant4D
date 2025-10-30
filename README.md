@@ -149,9 +149,11 @@ We provide the input file after grid prunning to facilitate reproduce, the proce
 
 ### Optimization
 
-Change the `source_path` and `model_path` accordingly in the config files, then run 
+Change the `path` and `weight` in `script/reconstruct.sh` and change the config accordingly in the script/optmize
 ```
-python -m script/optmize
+source script/reconstruct.sh 
+python -m script.prune
+python -m script.optmize
 ```
 
 
