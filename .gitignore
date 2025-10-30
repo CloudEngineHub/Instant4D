@@ -1,5 +1,5 @@
 
-*.png
+
 
 *.DS_Store
 *.cam
@@ -9,7 +9,7 @@
 *.bin
 *.jpg
 *.jpeg
-*.png
+
 *.gif
 *.bmp
 *.out
