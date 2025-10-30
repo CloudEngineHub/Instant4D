@@ -101,84 +101,6 @@ def read_droid_data(droid_path, motion_path, save_dir):
 
     return depth, color, resized_motion.reshape(-1, 1), intrinsic, cam_c2w
 
-def read_dycheck_data(droid_path, motion_path, save_dir):
-    droid_data = np.load(droid_path)
-    print(droid_data.keys())
-    # images, depths, intrinsic, cam_c2w, motion_prob
-    print(droid_data['images'].shape)
-    print(droid_data['depths'].shape)
-    print(droid_data['intrinsic'].shape)
-    print(droid_data['cam_c2w'].shape)
-
-    color = droid_data['images'] # B, H, W, 3
-    depth = droid_data['depths'] # B, H, W
-    B, H, W = depth.shape
-    intrinsic = droid_data['intrinsic'] # 3, 3
-    cam_c2w = droid_data['cam_c2w'] # B, 4, 4
-
-    mask_png_list = sorted(glob.glob(f"{motion_path}/*.png"))
-    motion_bool_list = []
-    print(len(mask_png_list))
-    assert len(mask_png_list) != 0
-    for mask_path in mask_png_list:
-        mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
-        mask = cv2.resize(mask, (W, H))
-        mask = mask ==255
-        mask = mask.reshape(-1, 1)
-        motion_bool_list.append(mask)
-
-  
-    
-    print(f"length of motion_bool_list: {len(motion_bool_list)}")
-    exit()
-
-    return depth, color, motion_bool_list, intrinsic, cam_c2w
-
-def read_dycheck_crop(droid_path, motion_path, save_dir):
-    droid_data = np.load(droid_path)
-    print(droid_data.keys())
-    # images, depths, intrinsic, cam_c2w, motion_prob
-    print(droid_data['images'].shape)
-    print(droid_data['depths'].shape)
-    print(droid_data['intrinsic'].shape)
-    print(droid_data['cam_c2w'].shape)
-
-    color = droid_data['images'] # B, H, W, 3
-    depth = droid_data['depths'] # B, H, W
-    B, H, W = depth.shape
-    intrinsic = droid_data['intrinsic'] # 3, 3
-    cam_c2w = droid_data['cam_c2w'] # B, 4, 4
-
-    mask_png_list = sorted(glob.glob(f"{motion_path}/*.png"))
-    motion_bool_list = []
-    print(len(mask_png_list))
-    assert len(mask_png_list) != 0
-    for idx in range(color.shape[0]-4):
-        # base name is like this 0_00000.png.png
-        print(f"crop base name: {os.path.basename(mask_png_list[idx])}")
-        mask_path = mask_png_list[idx]
-        mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
-        mask = cv2.resize(mask, (W, H))
-        mask = mask==0
-        mask = mask.reshape(-1, 1)
-        motion_bool_list.append(mask)
-    return None, None, None, None, None
-
-    color       = color[2:-2]
-    depth       = depth[2:-2]
-    cam_c2w     = cam_c2w[2:-2]    
-    
-    
-    print(f"shape of color: {color.shape}")
-    print(f"shape of depth: {depth.shape}")
-    print(f"shape of motion_bool_list: {len(motion_bool_list)}")
-    
-    assert len(motion_bool_list) == color.shape[0]
-    
-
-    return depth, color, motion_bool_list, intrinsic, cam_c2w
-
-
 def process_data(depth, color, motion_prob, intrinsic, cam_c2w):
     B, H, W = depth.shape
 
@@ -277,7 +199,6 @@ def make_transforms(intrinsic, cam_c2w, save_dir, scene ,W):
         json.dump(dict_to_save, f, indent=4)
     
 
-
 def voxel_filter(droid_path, motion_path, save_dir, scene, use_mask=False):    
     depth, color, motion_prob, intrinsic, cam_c2w = read_droid_data(droid_path, motion_path, save_dir)
         
@@ -360,7 +281,6 @@ def voxel_filter(droid_path, motion_path, save_dir, scene, use_mask=False):
 
 if __name__ == "__main__":
     
-    use_msam = True
 
     scene_list = [ "pizza","einstein"]
 
@@ -370,16 +290,8 @@ if __name__ == "__main__":
     
     
     for scene in scene_list:
-        if use_msam:
-            droid_path = f"{droid_dir}/{scene}_sgd_cvd_hr.npz"
-            motion_path = f"{motion_dir_msam}/{scene}/motion_prob.npy"
-            save_path = f"{save_dir}/{scene}"
-            os.makedirs(save_path, exist_ok=True)
-            voxel_filter(droid_path, motion_path, save_path, scene, use_mask=False)
-        else:
-            droid_path = f"{droid_dir}/{scene}_sgd_cvd_hr.npz"
-            motion_path = f"{motion_dir_mask_dir}/{scene}"
-            save_path = f"{save_dir}/{scene}"
-            os.makedirs(save_path, exist_ok=True)
-            voxel_filter(droid_path, motion_path, save_path, scene, use_mask=True)
-
+        droid_path = f"{droid_dir}/{scene}_sgd_cvd_hr.npz"
+        motion_path = f"{motion_dir_msam}/{scene}/motion_prob.npy"
+        save_path = f"{save_dir}/{scene}"
+        os.makedirs(save_path, exist_ok=True)
+        voxel_filter(droid_path, motion_path, save_path, scene, use_mask=False)

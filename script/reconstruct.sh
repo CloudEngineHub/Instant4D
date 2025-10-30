@@ -1,21 +1,21 @@
 # we apply this script to reconstruct with megaSAM
 # run source recover.sh if you want to switch between conda environments
-conda activate instant4D
+conda activate instant4d
 
 # directories to reconstruct
 evalset=(
-  market
+  panda
 )
 
 # replace with own paths
-DATA_DIR=/data/zhanpeng/sora 
-Depth_DIR=/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/medium
-CKPT_PATH=/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/checkpoints/megasam_final.pth
-Anything_weight=/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/checkpoints/depth_anything_vitl14.pth
-raft_ckpt=/home/zhanpeng/code/SLAM/reconstruct/MegaSAM_GS/checkpoints/raft-things.pth
+DATA_DIR=Instant4D/example
+Depth_DIR=Instant4D/SLAM/medium
+CKPT_PATH=checkpoints/megasam_final.pth # download the weight 
+Anything_weight=checkpoints/depth_anything_vitl14.pth
+raft_ckpt=checkpoints/raft-things.pth
 
-
-cd SLAM/mega-sam
+conda activate unidepth # in case you have another environment 
+cd SLAM/mega-sam  
 
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/UniDepth"
 
@@ -29,7 +29,7 @@ done
 
 
 
-
+conda activate instant4d
 # Run DepthAnything
 for seq in ${evalset[@]}; do
   DATA_PATH=$DATA_DIR/$seq/
@@ -69,3 +69,4 @@ for seq in ${evalset[@]}; do
   --w_grad 2.0 --w_normal 5.0
 done
 
+cd ../..

@@ -369,11 +369,11 @@ if __name__ == "__main__":
     network_gui_websocket.init("127.0.0.1", 6119) # make sure to forward this port on the code IDE
     args = parser.parse_args(sys.argv[1:])
     # cfg_dir, specfiy training parameter for optimization
-    cfg_path    = "/data/zhanpeng/tmp/Instant4D/configs/sora/panda.yaml"
+    cfg_path    = "Instant4D/configs/sora/panda.yaml"
     # source_dir, specify the pruning results from geometry recovery
-    source_path = "/data/zhanpeng/tmp/panda" 
+    source_path = "Instant4D/example/panda" 
     # model_dir, the place we save visualization
-    model_path  = "/data/zhanpeng/tmp/panda"
+    model_path  = "Instant4D/example/panda"
 
 
 
