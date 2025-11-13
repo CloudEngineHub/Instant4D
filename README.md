@@ -116,35 +116,8 @@ rm data.zip
 ```
 
 ### [DAVIS](https://davischallenge.org/davis2016/code.html) or custom sequences
+We provide sample videos under `examples/`, one can start from reproduce them.
 
-Put the images in the following data structure.
-```
-RoDynRF                
-├── dataset
-│   ├── DAVIS_480p
-│   │   ├── bear
-│   │   │   └── images
-│   │   │       ├── 00000.jpg
-│   │   │       ├── 00001.jpg
-│   │   │       ├── ...
-│   │   │       └── 00081.jpg
-│   │   ├── blackswan
-│   │   ├── ...
-│   │   └── train
-│   ├── custom
-│   │   ├── sequence_000
-│   │   │   └── images
-│   │   │       ├── 00000.jpg
-│   │   │       ├── 00001.jpg
-│   │   │       ├── ...
-```
-Run the following preprocessing steps.
-
-
-## Reproduction
-
-We provide the input file after grid prunning to facilitate reproduce, the processed data can be find here 
-[data](https://drive.google.com/drive/u/1/folders/1Ce4C0WpabtTQvZXeiUmMKVhD5kA9wJPf)
 
 
 ### Optimization
